@@ -3,7 +3,7 @@ import logo from '../assets/DreamCloud Logo 1 (1).svg'
 
 const Navbar = () => {
    return (
-      <div className="flex justify-between items-center text-white px-12">
+      <nav className="flex justify-between items-center text-white px-12">
          <span>
             <img src={logo} alt="logo"  />
          </span>
@@ -29,7 +29,7 @@ const Navbar = () => {
 
          </div>
 
-      </div>
+      </nav>
    )
 }
 
