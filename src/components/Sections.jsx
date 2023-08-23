@@ -8,13 +8,23 @@ const Sections = () => {
    return (
       <div className="flex flex-col gap-2 mb-2 w-full">
 
-         <section className="w-full flex items-center px-20 py-16 gap-10 bg-black">
-            <div>
-               <h1 className=" font-bold text-[40px]">Enjoy on your TV.</h1>
-               <p className="w-2/3 text-xl">Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
-            </div>
-            <div>
-               <img className="rounded-2xl" src={section1} alt="" />
+         <section className="bg-black" >
+
+            <span className="flex justify-center">
+               <button className=" bg-primaryPurple text-sm h-[40px] flex items-center justify-center gap-4 w-[200px] rounded-bl-3xl rounded-br-3xl">
+                  View full site
+                  <i class="fa-solid fa-circle-right"></i>
+               </button>
+            </span>
+         
+            <div className="w-full flex items-center px-20 pt-8 pb-16 gap-10 ">
+               <div>
+                  <h1 className=" font-bold text-[40px]">Enjoy on your TV.</h1>
+                  <p className="w-2/3 text-xl">Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+               </div>
+               <div>
+                  <img className="rounded-2xl" src={section1} alt="" />
+               </div>
             </div>
          </section>
 

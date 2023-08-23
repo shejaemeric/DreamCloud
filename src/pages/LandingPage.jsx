@@ -1,4 +1,5 @@
 import Footer from "../components/Footer"
+import Hero from "../components/Hero"
 import Navbar from "../components/Navbar"
 import Sections from "../components/Sections"
 
@@ -6,7 +7,7 @@ import Sections from "../components/Sections"
 const LandingPage = () => {
    return (
       <div>
-         <Navbar />
+         <Hero />
          <Sections />
          <Footer />
       </div>
