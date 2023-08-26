@@ -5,6 +5,7 @@ import { getPodcast } from "../features/Dashboard/GetPodcast";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Data from "./Data";
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -16,17 +17,17 @@ function Dashboard() {
   const [keyword, setKeyword] = useState("");
 
   // functions to search anything
-  const searchMovies = async (keyword) => {
+  const searchMovies = async () => {
     const res = await dispatch(getMovies(keyword));
-    setResults(res.payload);
+    setResults(res.payload.description);
   };
 
-  const searchPodcasts = async (keyword) => {
+  const searchPodcasts = async () => {
     const res = await dispatch(getPodcast(keyword));
     setResults(res.payload);
   };
 
-  const searchMusic = async (keyword) => {
+  const searchMusic = async () => {
     const res = await dispatch(getMusic(keyword));
     setResults(res.payload);
   };
@@ -50,36 +51,39 @@ function Dashboard() {
 
   return (
     <div>
-      <div className="search-div">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search something"
-          onChange={handleInputChange}
-        />
-        <button className="search-button" onClick={searchMovies}>
-          Search Movies
-        </button>
-        <button className="search-button" onClick={searchPodcasts}>
-          Search Podcast
-        </button>
-        <button className="search-button" onClick={searchMusic}>
-          Search Music
-        </button>
-      </div>
+      <section className="bg-black">
+        <div className="search-div">
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search something"
+            onChange={handleInputChange}
+          />
+          <button className="search-button" onClick={searchMovies}>
+            Search Movies
+          </button>
+          <button className="search-button" onClick={searchPodcasts}>
+            Search Podcast
+          </button>
+          <button className="search-button" onClick={searchMusic}>
+            Search Music
+          </button>
+        </div>
 
-      {/* Display the current keyword state */}
-      <p>Search keyword: {keyword}</p>
-      <p>Search results:</p>
-      <div style={{ width: "90%", height: "30vh", overflowY: "scroll" }}>
-        {JSON.stringify(results)}
-      </div>
-      <br></br>
-      <br></br>
-      <br></br>
-      <button className="custom-button" onClick={handleLogout}>
-        Logout
-      </button>
+        {/* Display the current keyword state */}
+        <p>Search keyword: {keyword}</p>
+        <p>Search results:</p>
+        <div style={{ width: "90%", height: "30vh", overflowY: "scroll" }}>
+          {JSON.stringify(results)}
+        </div>
+        <Data />
+        <br></br>
+        <br></br>
+        <br></br>
+        <button className="custom-button" onClick={handleLogout}>
+          Logout
+        </button>
+      </section>
     </div>
   );
 }

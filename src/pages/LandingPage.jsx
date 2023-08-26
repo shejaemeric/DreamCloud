@@ -1,17 +1,23 @@
-import Footer from "../components/Footer"
-import Hero from "../components/Hero"
-import Navbar from "../components/Navbar"
-import Sections from "../components/Sections"
-
+import Footer from "../components/Footer";
+import Hero from "../components/Hero";
+import Sections from "../components/Sections";
+import { useState } from "react";
 
 const LandingPage = () => {
-   return (
-      <div>
-         <Hero />
-         <Sections />
-         <Footer />
-      </div>
-   )
-}
+  const [searched, setSearched] = useState(false);
 
-export default LandingPage
+  return (
+    <div>
+      <Hero
+        searched={() => {
+          setSearched(true);
+        }}
+      />
+      {!searched && <Sections />}
+
+      <Footer />
+    </div>
+  );
+};
+
+export default LandingPage;
