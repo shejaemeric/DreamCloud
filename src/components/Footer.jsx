@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
    return (
-      <footer className="flex items-start justify-around bg-black text-white/10 text-sm py-16">
+      <footer className="flex items-start justify-around bg-black text-white/10 text-sm py-20">
          <div className="flex flex-col gap-2">
             <p>FAQ</p>
             <p>Investor relations</p>
