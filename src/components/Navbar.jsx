@@ -48,7 +48,9 @@ const Navbar = () => {
             {!user ? (
               <p onClick={login}>Login</p>
             ) : (
-              <p>{`Welcome ${getUserName()}`}</p>
+              <span className=" flex items-center justify-center w-[40px] h-[40px] rounded-full bg-primaryPurple">
+                <i class="fa-regular fa-user"></i>
+              </span>
             )}
           </span>
           {/* <span className=" rounded-lg px-6 py-2 bg-primaryPurple cursor-pointer text-[14px]">
