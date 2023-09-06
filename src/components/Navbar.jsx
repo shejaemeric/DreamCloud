@@ -24,6 +24,12 @@ const Navbar = () => {
       });
   };
 
+  const logOut = () => {
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    navigate("/");
+  };
+
   const getUserName = () => {
     return user.user.displayName;
   };
@@ -44,16 +50,21 @@ const Navbar = () => {
         </div>
 
         <div className="navButtons flex items-center gap-8 font-medium">
-            {!user ? (
+          {!user ? (
+            <span className=" rounded-lg px-6 py-2 border-white border-2 cursor-pointer text-[14px]">
+              <p onClick={login}>Login</p>
+            </span>
+          ) : (
+            <>
+              <span className=" flex items-center justify-center w-[48px] h-[48px] rounded-full bg-primaryPurple ">
+                <i class="fa-regular fa-user text-[20px]"></i>
+              </span>
               <span className=" rounded-lg px-6 py-2 border-white border-2 cursor-pointer text-[14px]">
-                <p onClick={login}>Login</p>
-              </span>  
-            ) : (
-                <span className=" flex items-center justify-center w-[48px] h-[48px] rounded-full bg-primaryPurple ">
-                  <i class="fa-regular fa-user text-[20px]"></i>
-                </span>
-            )}
-          
+                <p onClick={logOut}>Logout</p>
+              </span>{" "}
+            </>
+          )}
+
           {/* <span className=" rounded-lg px-6 py-2 bg-primaryPurple cursor-pointer text-[14px]">
                   <p>Sign Up</p>
                </span> */}

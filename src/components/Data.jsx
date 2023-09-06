@@ -12,7 +12,7 @@ function Data(props) {
   }
   if (props.type === "movie") {
     return (
-      <div>
+      <div onClick={props.onClick}>
         <div className="cellphone-container">
           <div className="movie">
             <div className="menu">
@@ -45,7 +45,7 @@ function Data(props) {
   if (props.type === "music") {
     const data1 = props.data.data;
     return (
-      <div>
+      <div onClick={props.onClick}>
         <div className="cellphone-container">
           <div className="movie">
             <div className="menu">
@@ -87,9 +87,8 @@ function Data(props) {
   }
   if (props.type === "podcast") {
     const data1 = props.data.data;
-    console.log(props?.data?.data);
     return (
-      <div>
+      <div onClick={props.onClick}>
         <div className="cellphone-container">
           <div className="movie">
             <div className="menu">
@@ -107,9 +106,8 @@ function Data(props) {
                   <h1>{data1?.name}</h1>
                   <ul className="movie-gen">
                     <li>
-                      {`PUBLISHER - ${formatMilliseconds(
-                        data1?.publisher?.name
-                      )}`}
+                      {`PUBLISHER -
+                        ${data1?.publisher?.name}`}
                     </li>
                   </ul>
                 </div>

@@ -14,9 +14,9 @@ const reducer = {
   getMovies: getMoviesReducer,
   getPodcast: getPodcastReducer,
   getUser: getUserReducer,
-  getOneMovieReducer: getOneMovieReducer,
-  GetOneMusicReducer: getOneMusicReducer,
-  GetOnePodcastReducer: getOnePodcastReducer,
+  getOneMovie: getOneMovieReducer,
+  GetOneMusic: getOneMusicReducer,
+  GetOnePodcast: getOnePodcastReducer,
 };
 
 const middleware = [];
