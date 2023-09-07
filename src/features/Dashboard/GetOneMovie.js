@@ -9,10 +9,10 @@ export const getOneMovie = createAsyncThunk("dash/getOneMovie", async (id) => {
     method: "GET",
     url: "https://mdblist.p.rapidapi.com/",
     params: { i: id },
-    headers: {
-      "X-RapidAPI-Key": "291956e6a0msh45c40c5ab4a881ep1bea65jsn220317b787e4",
-      "X-RapidAPI-Host": "mdblist.p.rapidapi.com",
-    },
+  headers: {
+    'X-RapidAPI-Key': 'f1d23fd19fmshaeef04c8c4629e4p197180jsn3943ae586bd7',
+    'X-RapidAPI-Host': 'mdblist.p.rapidapi.com'
+  }
   };
   try {
     const response = await axios.request(options);
